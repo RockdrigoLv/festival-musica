@@ -1,0 +1,48 @@
+.header {
+  background-color: $verde;
+
+  .contenido-header {
+    padding: $separacion / 2 0;
+    @include tablet{ //se esta agregando un mixin que ya se creo y al mismo tiempo
+      //se le estan pasando parametros
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  h1 {
+    color: $blanco;
+    margin-bottom: 1rem;
+    text-align: center;
+    @include tablet{
+      margin-bottom: 0;
+
+    }
+  }
+  &.fijo{
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 .3rem .4rem #444;
+  }
+}
+
+.navegacion-principal {
+  // display: flex;
+  // gap: 2rem; //// NOTE: agrega espacios entre elementos
+  //pero no es soportada por todos los navegadores
+  display: grid; // NOTE:  otra forma de agregar espacios entre elementos
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+  text-align: center;
+  a {
+    color: $blanco;
+    font-size: 2rem;
+    &:hover { // & --> hace referencia al elemento  que lo utiliza
+      // en este caso <a>
+      color: $amarillo;
+    }
+  }
+
+ 
+}

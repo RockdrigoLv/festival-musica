@@ -1,0 +1,37 @@
+// NOTE: los mixin se utilizan para evitar la repeticion de codigo es decir
+// si se tienen diferentes etiquetas con las mismas porpiedades
+//se utilizan los mixin para agregar esas porpiedades sin repetir codigo
+// los mixins son exclusivos de sass y de iugla se le pueden pasar valores
+//como en una funcion
+@mixin telefono {
+  @media (min-width: $telefono) {
+    @content;// NOTE: sirve para crear un mixin dinamico que le permite que se le envien
+    // N cantidad de parametros
+
+  }
+
+}
+
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;// NOTE: sirve para crear un mixin dinamico que le permite que se le envien
+    // N cantidad de parametros
+
+  }
+
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;// NOTE: sirve para crear un mixin dinamico que le permite que se le envien
+    // N cantidad de parametros
+
+  }
+
+}
+@mixin grid($columnas, $espaciado) {
+  display: grid;
+  grid-template-columns: repeat($columnas, 1fr);
+  column-gap: $espaciado;
+}

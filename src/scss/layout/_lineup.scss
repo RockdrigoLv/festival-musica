@@ -1,0 +1,74 @@
+.lineup{
+  background: $rosa;
+  padding: $separacion 0;
+  h3, p{
+    text-align: center;
+    color: $blanco;
+  }
+  .dia{
+    text-transform: uppercase;
+    margin: $separacion 0;
+
+  }
+
+
+}
+.escenarios-contenedor{
+
+  @include tablet{
+    @include grid(2, $separacion);
+  }
+  .escenario{
+    margin-top: 2rem;
+    padding: $separacion / 2;
+  }
+  .nombre-escenario{
+     color: $negro;
+     font-size: 2rem;
+     font-weight: $delgada;
+
+     &:after{
+       content: '';// NOTE: como se utiliza after y
+       // es un pseudo elemento que no existe se utiliza content
+       width: 20rem;
+       height: 10rem;
+       display: block;
+       margin: 2rem auto 0 auto;
+       background-size: 15rem;
+       background-repeat: no-repeat;
+       background-position: center center;
+     }
+  }
+}
+.edm .nombre-escenario{
+  &:after {
+    background-image: url('../img/icono_edm.png');
+  }
+}
+.rock .nombre-escenario{
+  &:after {
+    background-image: url('../img/icono_rock.png');
+  }
+}
+.calendario{
+  padding: 0;
+  list-style: none;
+  li{
+    font-size: 1.5rem;
+    padding: $separacion / 2;
+    font-weight: $bold;
+    span{
+      font-weight: $regular;
+    }
+  }
+}
+.bg-verde .calendario li:nth-child(2n+1){ // NOTE: realiza una operacion 2(0) + 1 y aplica el cambio en el
+  //en el numero de la lista que coincida con el resultado
+  // NOTE: igual se puede usar 'odd' que son los numero nones
+  background-color: darken($verde, 10); // NOTE: darken funcion de sass y le agrega un porcentaje de negroa un color
+}
+.bg-amarillo .calendario li:nth-child(2n+1){ // NOTE: realiza una operacion 2(0) + 1 y aplica el cambio en el
+  //en el numero de la lista que coincida con el resultado
+  // NOTE: igual se puede usar 'odd' que son los numero nones
+  background-color: darken($amarillo, 10); // NOTE: darken funcion de sass y le agrega un porcentaje de negroa un color
+}
